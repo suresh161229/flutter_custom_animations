@@ -56,7 +56,7 @@ class CustomAnimatedWidgetChain extends StatelessWidget {
     );
   }
 
-  /// Creates a [Stagger].
+  /// Creates a [StaggerBuilder].
   Widget buildStagger({
     required double staggerRatio,
     Duration? duration,
