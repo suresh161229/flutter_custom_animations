@@ -1,7 +1,7 @@
 # custom_animation
 
 [![Pub Version](https://img.shields.io/pub/v/custom_animation?color=blue)](https://pub.dev/packages/custom_animation)
-[![Flutter Build](https://github.com/SureshBabu/custom_animation/actions/workflows/flutter.yml/badge.svg)](https://github.com/SureshBabu/custom_animation/actions)
+[![Flutter Build](https://github.com/suresh161229/custom_animation/actions/workflows/flutter.yml/badge.svg)](https://github.com/suresh161229/custom_animation/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A reusable, production-ready Flutter animation framework providing customizable animation effects, animated widgets, page transitions, complex builders, and extremely convenient widget extensions.
