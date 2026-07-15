@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:custom_animation/custom_animation.dart';
+import 'package:flutter_custom_animations/flutter_custom_animations.dart';
 
 /// An animated widget that applies an elastic effect to its child.
 class ElasticAnimation extends StatelessWidget {

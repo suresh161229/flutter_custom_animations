@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
-import 'package:custom_animation/src/effects/animation_effect.dart';
-import 'package:custom_animation/src/builders/custom_animation_builder.dart';
+import 'package:flutter_custom_animations/src/effects/animation_effect.dart';
+import 'package:flutter_custom_animations/src/builders/flutter_custom_animations_builder.dart';
 
 /// Wraps an effect with its own explicit duration inside a ChainBuilder.
 class ChainedEffect {

@@ -1,14 +1,14 @@
-# custom_animation
+# flutter_custom_animations
 
-[![Pub Version](https://img.shields.io/pub/v/custom_animation?color=blue)](https://pub.dev/packages/custom_animation)
-[![Flutter Build](https://github.com/suresh161229/custom_animation/actions/workflows/flutter.yml/badge.svg)](https://github.com/suresh161229/custom_animation/actions)
+[![Pub Version](https://img.shields.io/pub/v/flutter_custom_animations?color=blue)](https://pub.dev/packages/flutter_custom_animations)
+[![Flutter Build](https://github.com/suresh161229/flutter_custom_animations/actions/workflows/flutter.yml/badge.svg)](https://github.com/suresh161229/flutter_custom_animations/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A reusable, production-ready Flutter animation framework providing customizable animation effects, animated widgets, page transitions, complex builders, and extremely convenient widget extensions.
 
 ## Introduction
 
-`custom_animation` removes the boilerplate from Flutter animations. Instead of manually managing `AnimationController`s, `Tween`s, and `SingleTickerProviderStateMixin`s, you can add high-quality, performant animations to your apps using dead-simple widget extensions and pre-built animated widgets.
+`flutter_custom_animations` removes the boilerplate from Flutter animations. Instead of manually managing `AnimationController`s, `Tween`s, and `SingleTickerProviderStateMixin`s, you can add high-quality, performant animations to your apps using dead-simple widget extensions and pre-built animated widgets.
 
 ## Features
 
@@ -19,9 +19,9 @@ A reusable, production-ready Flutter animation framework providing customizable 
 * **Animation Builders:** `SequenceBuilder`, `StaggerBuilder`, `ChainBuilder`, and `ParallelBuilder` to create incredibly complex chained animations with ease.
 * **Widget Extensions:** Simply add `.animate()`, `.fadeIn()`, or `.slideIn()` to ANY Flutter widget to instantly animate it!
 
-## Why custom_animation?
+## Why flutter_custom_animations?
 
-Traditional Flutter animations require significant boilerplate, making UI code verbose and harder to read. `custom_animation` drastically simplifies this by allowing declarative animations directly in the widget tree, reducing boilerplate by up to 80% while retaining full control over durations, curves, and sequences.
+Traditional Flutter animations require significant boilerplate, making UI code verbose and harder to read. `flutter_custom_animations` drastically simplifies this by allowing declarative animations directly in the widget tree, reducing boilerplate by up to 80% while retaining full control over durations, curves, and sequences.
 
 ## Installation
 
@@ -29,7 +29,7 @@ Add the following to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  custom_animation: ^1.0.0
+  flutter_custom_animations: ^1.0.0
 ```
 
 Then run:
@@ -43,7 +43,7 @@ flutter pub get
 The easiest way to animate any widget is using our **Widget Extensions**:
 
 ```dart
-import 'package:custom_animation/custom_animation.dart';
+import 'package:flutter_custom_animations/flutter_custom_animations.dart';
 
 // Just append `.fadeIn()` to any widget!
 Text('Hello World').fadeIn(

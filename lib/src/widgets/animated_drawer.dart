@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:custom_animation/custom_animation.dart';
+import 'package:flutter_custom_animations/flutter_custom_animations.dart';
 
 /// A drawer that applies a 3D flip effect as it is built by the scaffold.
 class AnimatedDrawer extends StatelessWidget {

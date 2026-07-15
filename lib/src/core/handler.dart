@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:custom_animation/src/core/lifecycle.dart';
+import 'package:flutter_custom_animations/src/core/lifecycle.dart';
 
 /// A utility that listens to an [AnimationController] and triggers
 /// the corresponding hooks in an [AnimationLifecycle].

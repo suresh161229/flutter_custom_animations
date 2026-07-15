@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:custom_animation/custom_animation.dart';
+import 'package:flutter_custom_animations/flutter_custom_animations.dart';
 
 /// A card that elegantly enters the screen when built.
 class AnimatedCard extends StatelessWidget {

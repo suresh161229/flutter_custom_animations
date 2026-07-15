@@ -1,6 +1,6 @@
 /// A production-quality, reusable Flutter animation framework.
 ///
-/// The `custom_animation` package provides core animation utilities, effects,
+/// The `flutter_custom_animations` package provides core animation utilities, effects,
 /// builders, widgets, and navigation transitions designed with Clean Architecture
 /// and SOLID principles.
 library;

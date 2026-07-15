@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:custom_animation/src/core/core.dart';
+import 'package:flutter_custom_animations/src/core/core.dart';
 
 /// A widget builder that receives the current [Animation] frame.
 typedef CustomAnimationWidgetBuilder =

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:custom_animation/custom_animation.dart';
+import 'package:flutter_custom_animations/flutter_custom_animations.dart';
 
 /// An animated text field that gently fades and scales in.
 class AnimatedTextField extends StatelessWidget {

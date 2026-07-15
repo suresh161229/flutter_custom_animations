@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:custom_animation/src/core/core.dart';
+import 'package:flutter_custom_animations/src/core/core.dart';
 
 /// An animated widget that applies a slide effect to its child.
 class SlideAnimation extends StatefulWidget {

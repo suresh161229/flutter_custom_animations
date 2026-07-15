@@ -1,6 +1,6 @@
 # Migration Guide
 
-This guide helps you transition from boilerplate-heavy traditional Flutter animations to the clean `custom_animation` syntax.
+This guide helps you transition from boilerplate-heavy traditional Flutter animations to the clean `flutter_custom_animations` syntax.
 
 ## Migrating `AnimationController`
 
@@ -34,7 +34,7 @@ class _MyState extends State<MyWidget> with SingleTickerProviderStateMixin {
 }
 ```
 
-### With `custom_animation`
+### With `flutter_custom_animations`
 You no longer need to convert your `StatelessWidget` to a `StatefulWidget`, and you don't need `SingleTickerProviderStateMixin`.
 
 ```dart
@@ -63,7 +63,7 @@ Navigator.push(
 );
 ```
 
-### With `custom_animation`
+### With `flutter_custom_animations`
 ```dart
 Navigator.push(context, FadeRoute(page: const DetailPage()));
 ```

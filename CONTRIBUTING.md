@@ -1,4 +1,4 @@
-# Contributing to `custom_animation`
+# Contributing to `flutter_custom_animations`
 
 We love your input! We want to make contributing to this project as easy and transparent as possible.
 

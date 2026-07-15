@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:flutter/widgets.dart';
-import 'package:custom_animation/src/core/config.dart';
-import 'package:custom_animation/src/core/handler.dart';
-import 'package:custom_animation/src/core/lifecycle.dart';
+import 'package:flutter_custom_animations/src/core/config.dart';
+import 'package:flutter_custom_animations/src/core/handler.dart';
+import 'package:flutter_custom_animations/src/core/lifecycle.dart';
 
 /// A manager that abstracts away the boilerplate of [AnimationController] creation,
 /// delay timers, status handling, and disposal.

@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:custom_animation/src/core/constants.dart';
+import 'package:flutter_custom_animations/src/core/constants.dart';
 
 /// An immutable configuration class that defines how an animation should behave.
 @immutable
