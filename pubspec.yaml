@@ -1,0 +1,30 @@
+name: custom_animation
+description: A reusable Flutter animation framework providing customizable animation effects, animated widgets, page transitions, builders, and widget extensions.
+version: 1.0.0
+
+homepage: https://github.com/<your-github-username>/custom_animation
+repository: https://github.com/<your-github-username>/custom_animation
+issue_tracker: https://github.com/<your-github-username>/custom_animation/issues
+
+topics:
+  - flutter
+  - animation
+  - ui
+  - transitions
+  - widgets
+
+environment:
+  sdk: ">=3.7.2 <4.0.0"
+  flutter: ">=3.29.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+
+flutter:
