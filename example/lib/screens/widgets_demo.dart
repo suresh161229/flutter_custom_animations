@@ -31,9 +31,7 @@ class _WidgetsDemoState extends State<WidgetsDemo> {
             child: const DemoBox(label: 'Button', color: Colors.red),
           ),
           const SizedBox(height: 20),
-          const AnimatedCard(
-            child: DemoBox(label: 'Card', color: Colors.blue),
-          ),
+          const AnimatedCard(child: DemoBox(label: 'Card', color: Colors.blue)),
           const SizedBox(height: 20),
           AnimatedSearchBar(controller: _controller),
         ],

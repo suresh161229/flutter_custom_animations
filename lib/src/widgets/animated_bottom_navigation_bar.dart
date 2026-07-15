@@ -2,19 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:custom_animation/custom_animation.dart';
 
 class AnimatedBottomNavItem {
+  /// Documentation for [icon].
   final IconData icon;
+
+  /// Documentation for [label].
   final String label;
-  
+
+  /// Creates a [AnimatedBottomNavItem].
   const AnimatedBottomNavItem({required this.icon, required this.label});
 }
 
 /// A BottomNavigationBar where selected items perform a custom animation.
 class AnimatedBottomNavigationBar extends StatelessWidget {
+  /// Documentation for [items].
   final List<AnimatedBottomNavItem> items;
+
+  /// Documentation for [currentIndex].
   final int currentIndex;
+
+  /// Callback when the widget is tapped.
   final ValueChanged<int> onTap;
+
+  /// Documentation for [activeEffect].
   final AnimationEffect activeEffect;
 
+  /// Creates a [AnimatedBottomNavigationBar].
   const AnimatedBottomNavigationBar({
     super.key,
     required this.items,
@@ -29,21 +41,28 @@ class AnimatedBottomNavigationBar extends StatelessWidget {
       currentIndex: currentIndex,
       onTap: onTap,
       type: BottomNavigationBarType.fixed,
-      items: items.asMap().entries.map((entry) {
-        final index = entry.key;
-        final item = entry.value;
-        final isActive = index == currentIndex;
+      items:
+          items.asMap().entries.map((entry) {
+            /// A property of this class.
+            final index = entry.key;
 
-        return BottomNavigationBarItem(
-          icon: isActive
-              ? EffectBuilder(
-                  effect: activeEffect,
-                  child: Icon(item.icon),
-                )
-              : Icon(item.icon),
-          label: item.label,
-        );
-      }).toList(),
+            /// A property of this class.
+            final item = entry.value;
+
+            /// A property of this class.
+            final isActive = index == currentIndex;
+
+            return BottomNavigationBarItem(
+              icon:
+                  isActive
+                      ? EffectBuilder(
+                        effect: activeEffect,
+                        child: Icon(item.icon),
+                      )
+                      : Icon(item.icon),
+              label: item.label,
+            );
+          }).toList(),
     );
   }
 }

@@ -3,17 +3,37 @@ import 'package:custom_animation/custom_animation.dart';
 
 /// A drop-in replacement for ListView.builder with staggered entrance animations.
 class CustomAnimatedList extends StatelessWidget {
+  /// The total number of items.
   final int itemCount;
+
+  /// The builder function for children items.
   final NullableIndexedWidgetBuilder itemBuilder;
+
+  /// The duration of the animation.
   final Duration duration;
+
+  /// The duration to stagger children animations.
   final Duration staggerDuration;
+
+  /// The list of effects to apply.
   final List<AnimationEffect> effects;
+
+  /// Documentation for [controller].
   final ScrollController? controller;
+
+  /// Empty space to inscribe inside the widget.
   final EdgeInsetsGeometry? padding;
+
+  /// Documentation for [scrollDirection].
   final Axis scrollDirection;
+
+  /// Documentation for [shrinkWrap].
   final bool shrinkWrap;
+
+  /// Documentation for [maxStaggerDepth].
   final int maxStaggerDepth;
 
+  /// Creates a [CustomAnimatedList].
   const CustomAnimatedList({
     super.key,
     required this.itemCount,
@@ -40,12 +60,17 @@ class CustomAnimatedList extends StatelessWidget {
       scrollDirection: scrollDirection,
       shrinkWrap: shrinkWrap,
       itemBuilder: (context, index) {
+        /// The widget below this widget in the tree.
         final child = itemBuilder(context, index);
         if (child == null) return const SizedBox.shrink();
 
         // Stagger up to maxStaggerDepth items, after that load them instantly to avoid infinite delays when scrolling.
-        final delayMs = index < maxStaggerDepth ? staggerDuration.inMilliseconds * index : 0;
-        
+        /// A property of this class.
+        final delayMs =
+            index < maxStaggerDepth
+                ? staggerDuration.inMilliseconds * index
+                : 0;
+
         return ParallelBuilder(
           duration: duration,
           delay: Duration(milliseconds: delayMs),

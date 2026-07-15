@@ -15,10 +15,7 @@ class HeroDemo extends StatelessWidget {
             Navigator.push(context, HeroRoute(page: const _HeroDetailsPage()));
           },
           effect: const ScaleEffect(begin: 1.0, end: 0.9),
-          child: const Hero(
-            tag: 'hero-box',
-            child: DemoBox(label: 'Tap Me!'),
-          ),
+          child: const Hero(tag: 'hero-box', child: DemoBox(label: 'Tap Me!')),
         ),
       ),
     );
@@ -32,7 +29,8 @@ class _HeroDetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Hero Details')),
-      backgroundColor: Colors.transparent, // Required for HeroRoute translucent barrier
+      backgroundColor:
+          Colors.transparent, // Required for HeroRoute translucent barrier
       body: Center(
         child: Hero(
           tag: 'hero-box',

@@ -12,14 +12,14 @@ class ScaleDemo extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const DemoBox(label: 'Scale Up')
-              .scale(begin: 0.0, end: 1.0),
-              
+          const DemoBox(label: 'Scale Up').scale(begin: 0.0, end: 1.0),
+
           const SizedBox(height: 40),
-          
-          const DemoBox(label: 'Pulse', color: Colors.purple)
-              .scale(begin: 1.0, end: 1.2)
-              .animate(repeat: true, reverse: true),
+
+          const DemoBox(
+            label: 'Pulse',
+            color: Colors.purple,
+          ).scale(begin: 1.0, end: 1.2).animate(repeat: true, reverse: true),
         ],
       ),
     );

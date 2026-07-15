@@ -4,15 +4,26 @@ import 'package:custom_animation/custom_animation.dart';
 /// An internal wrapper that accumulates effects for a single child widget.
 /// When built, it outputs exactly one [ParallelBuilder] (by default), ensuring zero nesting.
 class CustomAnimatedWidgetChain extends StatelessWidget {
+  /// The widget below this widget in the tree.
   final Widget child;
+
+  /// The list of effects to apply.
   final List<AnimationEffect> effects;
-  
+
   // Configuration options that might be set at the end of the chain.
+  /// The duration of the animation.
   final Duration? duration;
+
+  /// The delay before the animation starts.
   final Duration? delay;
+
+  /// Whether the animation should repeat indefinitely.
   final bool repeat;
+
+  /// Whether the animation should reverse after completing.
   final bool reverse;
 
+  /// Creates a [CustomAnimatedWidgetChain].
   const CustomAnimatedWidgetChain({
     super.key,
     required this.child,
@@ -45,7 +56,13 @@ class CustomAnimatedWidgetChain extends StatelessWidget {
     );
   }
 
-  Widget buildStagger({required double staggerRatio, Duration? duration, bool? repeat, bool? reverse}) {
+  /// Creates a [Stagger].
+  Widget buildStagger({
+    required double staggerRatio,
+    Duration? duration,
+    bool? repeat,
+    bool? reverse,
+  }) {
     return StaggerBuilder(
       duration: duration ?? this.duration ?? const Duration(milliseconds: 500),
       staggerRatio: staggerRatio,
@@ -88,7 +105,10 @@ extension CustomAnimationWidgetExtensions on Widget {
   }
 
   /// Applies a slide effect to the widget.
-  CustomAnimatedWidgetChain slide({Offset begin = const Offset(-1.0, 0.0), Offset end = Offset.zero}) {
+  CustomAnimatedWidgetChain slide({
+    Offset begin = const Offset(-1.0, 0.0),
+    Offset end = Offset.zero,
+  }) {
     return _getChain().addEffect(SlideEffect(begin: begin, end: end));
   }
 
@@ -121,44 +141,72 @@ extension CustomAnimationWidgetExtensions on Widget {
   CustomAnimatedWidgetChain flip() {
     return _getChain().addEffect(const FlipEffect());
   }
-  
+
   /// Applies a pulse effect to the widget.
   CustomAnimatedWidgetChain pulse() {
     return _getChain().addEffect(const PulseEffect());
   }
-  
+
   /// Applies an elastic scale effect to the widget.
   CustomAnimatedWidgetChain elastic() {
     return _getChain().addEffect(const ElasticEffect());
   }
-  
+
   /// Applies a swing rotation effect to the widget.
   CustomAnimatedWidgetChain swing() {
     return _getChain().addEffect(const SwingEffect());
   }
-  
+
   /// Applies a jelly squash-and-stretch effect to the widget.
   CustomAnimatedWidgetChain jelly() {
     return _getChain().addEffect(const JellyEffect());
   }
 
   /// Replaces the default ParallelBuilder with a SequenceBuilder for all collected effects.
-  Widget sequence({Duration? duration, bool repeat = false, bool reverse = false}) {
-    return _getChain().buildSequence(duration: duration, repeat: repeat, reverse: reverse);
+  Widget sequence({
+    Duration? duration,
+    bool repeat = false,
+    bool reverse = false,
+  }) {
+    return _getChain().buildSequence(
+      duration: duration,
+      repeat: repeat,
+      reverse: reverse,
+    );
   }
-  
+
   /// Alias for sequence(). Chains all effects to run sequentially.
-  Widget chain({Duration? duration, bool repeat = false, bool reverse = false}) {
+  Widget chain({
+    Duration? duration,
+    bool repeat = false,
+    bool reverse = false,
+  }) {
     return sequence(duration: duration, repeat: repeat, reverse: reverse);
   }
 
   /// Replaces the default ParallelBuilder with a StaggerBuilder for all collected effects.
-  Widget stagger({double staggerRatio = 0.2, Duration? duration, bool repeat = false, bool reverse = false}) {
-    return _getChain().buildStagger(staggerRatio: staggerRatio, duration: duration, repeat: repeat, reverse: reverse);
+  Widget stagger({
+    double staggerRatio = 0.2,
+    Duration? duration,
+    bool repeat = false,
+    bool reverse = false,
+  }) {
+    return _getChain().buildStagger(
+      staggerRatio: staggerRatio,
+      duration: duration,
+      repeat: repeat,
+      reverse: reverse,
+    );
   }
 
   /// Applies general configuration to the underlying builder.
-  CustomAnimatedWidgetChain animate({Duration? duration, Duration? delay, bool repeat = false, bool reverse = false}) {
+  CustomAnimatedWidgetChain animate({
+    Duration? duration,
+    Duration? delay,
+    bool repeat = false,
+    bool reverse = false,
+  }) {
+    /// A property of this class.
     final chain = _getChain();
     return CustomAnimatedWidgetChain(
       effects: chain.effects,

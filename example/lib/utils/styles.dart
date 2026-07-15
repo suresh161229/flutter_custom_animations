@@ -17,13 +17,13 @@ class AppStyles {
     color: textMain,
     letterSpacing: -0.5,
   );
-  
+
   static final TextStyle heading2 = GoogleFonts.poppins(
     fontSize: 22,
     fontWeight: FontWeight.w600,
     color: textMain,
   );
-  
+
   static final TextStyle body = GoogleFonts.poppins(
     fontSize: 16,
     color: textMuted,
@@ -46,7 +46,7 @@ class AppStyles {
         color: Colors.black.withValues(alpha: 0.2),
         blurRadius: 20,
         offset: const Offset(0, 10),
-      )
+      ),
     ],
   );
 

@@ -3,7 +3,9 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:custom_animation/custom_animation.dart';
 
 void main() {
-  testWidgets('RotationAnimation.clockwise starts at 0.0 and ends at 1.0', (WidgetTester tester) async {
+  testWidgets('RotationAnimation.clockwise starts at 0.0 and ends at 1.0', (
+    WidgetTester tester,
+  ) async {
     await tester.pumpWidget(
       const MaterialApp(
         home: Scaffold(
@@ -30,7 +32,9 @@ void main() {
     expect(rotationTransition.turns.value, equals(1.0));
   });
 
-  testWidgets('RotationAnimation triggers callbacks', (WidgetTester tester) async {
+  testWidgets('RotationAnimation triggers callbacks', (
+    WidgetTester tester,
+  ) async {
     bool started = false;
     bool completed = false;
 

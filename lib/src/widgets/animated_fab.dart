@@ -3,11 +3,19 @@ import 'package:custom_animation/custom_animation.dart';
 
 /// An animated Floating Action Button with resting idle animations.
 class AnimatedFAB extends StatelessWidget {
+  /// The widget below this widget in the tree.
   final Widget child;
+
+  /// Callback when the widget is pressed.
   final VoidCallback? onPressed;
+
+  /// Documentation for [idleEffect].
   final AnimationEffect idleEffect;
+
+  /// Documentation for [pressEffect].
   final AnimationEffect pressEffect;
 
+  /// Creates a [AnimatedFAB].
   const AnimatedFAB({
     super.key,
     required this.child,

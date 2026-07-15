@@ -24,7 +24,10 @@ class StaggerDemo extends StatelessWidget {
               ),
               alignment: Alignment.centerLeft,
               padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Text('Item $index', style: const TextStyle(color: Colors.white)),
+              child: Text(
+                'Item $index',
+                style: const TextStyle(color: Colors.white),
+              ),
             ),
           );
         },

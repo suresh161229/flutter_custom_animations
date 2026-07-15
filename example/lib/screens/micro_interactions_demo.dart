@@ -17,24 +17,28 @@ class MicroInteractionsDemo extends StatelessWidget {
             effect: const ScaleEffect(begin: 1.0, end: 0.9),
             child: const DemoBox(label: 'Press Me', color: Colors.purple),
           ),
-          
+
           const SizedBox(height: 40),
-          
+
           AnimatedButton(
             onPressed: () {},
             effect: const RotationEffect(begin: 0.0, end: 0.05), // Wiggle
             child: const DemoBox(label: 'Wiggle', color: Colors.orange),
           ),
-          
+
           const SizedBox(height: 40),
-          
-          const Text('Fluent API Chaining:', style: TextStyle(color: Colors.white, fontSize: 18)),
+
+          const Text(
+            'Fluent API Chaining:',
+            style: TextStyle(color: Colors.white, fontSize: 18),
+          ),
           const SizedBox(height: 20),
-          
-          const Icon(Icons.favorite, color: Colors.pink, size: 80)
-            .bounce()
-            .jelly()
-            .animate(repeat: true, reverse: true),
+
+          const Icon(
+            Icons.favorite,
+            color: Colors.pink,
+            size: 80,
+          ).bounce().jelly().animate(repeat: true, reverse: true),
         ],
       ),
     );

@@ -64,8 +64,8 @@ class RotationAnimation extends StatefulWidget {
     this.autoPlay = true,
     this.onStart,
     this.onComplete,
-  })  : begin = 0.0,
-        end = 1.0;
+  }) : begin = 0.0,
+       end = 1.0;
 
   /// Factory for an anti-clockwise rotation animation (0.0 to -1.0).
   const RotationAnimation.antiClockwise({
@@ -79,8 +79,8 @@ class RotationAnimation extends StatefulWidget {
     this.autoPlay = true,
     this.onStart,
     this.onComplete,
-  })  : begin = 0.0,
-        end = -1.0;
+  }) : begin = 0.0,
+       end = -1.0;
 
   /// Factory for a continuous, infinite rotation (defaults to linear curve and repeat: true).
   const RotationAnimation.continuous({
@@ -92,10 +92,10 @@ class RotationAnimation extends StatefulWidget {
     this.autoPlay = true,
     this.onStart,
     this.onComplete,
-  })  : begin = 0.0,
-        end = 1.0,
-        repeat = true,
-        curve = Curves.linear;
+  }) : begin = 0.0,
+       end = 1.0,
+       repeat = true,
+       curve = Curves.linear;
 
   @override
   State<RotationAnimation> createState() => _RotationAnimationState();
@@ -145,9 +145,6 @@ class _RotationAnimationState extends State<RotationAnimation>
 
   @override
   Widget build(BuildContext context) {
-    return RotationTransition(
-      turns: _rotation,
-      child: widget.child,
-    );
+    return RotationTransition(turns: _rotation, child: widget.child);
   }
 }

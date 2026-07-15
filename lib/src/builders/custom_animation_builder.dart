@@ -2,13 +2,14 @@ import 'package:flutter/widgets.dart';
 import 'package:custom_animation/src/core/core.dart';
 
 /// A widget builder that receives the current [Animation] frame.
-typedef CustomAnimationWidgetBuilder = Widget Function(
-  BuildContext context,
-  Widget child,
-  Animation<double> animation,
-);
+typedef CustomAnimationWidgetBuilder =
+    Widget Function(
+      BuildContext context,
+      Widget child,
+      Animation<double> animation,
+    );
 
-/// A stateful builder that encapsulates [AnimationControllerManager] to easily 
+/// A stateful builder that encapsulates [AnimationControllerManager] to easily
 /// build custom animations without duplicating controller logic.
 class CustomAnimationBuilder extends StatefulWidget {
   /// The widget below this widget in the tree.

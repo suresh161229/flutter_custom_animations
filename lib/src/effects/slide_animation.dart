@@ -65,7 +65,7 @@ class SlideAnimation extends StatefulWidget {
     this.autoPlay = true,
     this.onStart,
     this.onComplete,
-  })  : begin = const Offset(-1.0, 0.0);
+  }) : begin = const Offset(-1.0, 0.0);
 
   /// Factory for sliding in from the right (1.0, 0.0) to zero.
   const SlideAnimation.right({
@@ -80,7 +80,7 @@ class SlideAnimation extends StatefulWidget {
     this.autoPlay = true,
     this.onStart,
     this.onComplete,
-  })  : begin = const Offset(1.0, 0.0);
+  }) : begin = const Offset(1.0, 0.0);
 
   /// Factory for sliding in from the top (0.0, -1.0) to zero.
   const SlideAnimation.top({
@@ -95,7 +95,7 @@ class SlideAnimation extends StatefulWidget {
     this.autoPlay = true,
     this.onStart,
     this.onComplete,
-  })  : begin = const Offset(0.0, -1.0);
+  }) : begin = const Offset(0.0, -1.0);
 
   /// Factory for sliding in from the bottom (0.0, 1.0) to zero.
   const SlideAnimation.bottom({
@@ -110,7 +110,7 @@ class SlideAnimation extends StatefulWidget {
     this.autoPlay = true,
     this.onStart,
     this.onComplete,
-  })  : begin = const Offset(0.0, 1.0);
+  }) : begin = const Offset(0.0, 1.0);
 
   @override
   State<SlideAnimation> createState() => _SlideAnimationState();
@@ -160,9 +160,6 @@ class _SlideAnimationState extends State<SlideAnimation>
 
   @override
   Widget build(BuildContext context) {
-    return SlideTransition(
-      position: _offset,
-      child: widget.child,
-    );
+    return SlideTransition(position: _offset, child: widget.child);
   }
 }

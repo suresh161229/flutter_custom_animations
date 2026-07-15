@@ -12,21 +12,24 @@ class BounceDemo extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const DemoBox(label: 'Bounce In')
-              .bounce()
-              .animate(duration: const Duration(seconds: 1)),
-              
+          const DemoBox(
+            label: 'Bounce In',
+          ).bounce().animate(duration: const Duration(seconds: 1)),
+
           const SizedBox(height: 40),
-          
-          const DemoBox(label: 'Elastic', color: Colors.indigo)
-              .elastic()
-              .animate(duration: const Duration(seconds: 1)),
-              
+
+          const DemoBox(
+            label: 'Elastic',
+            color: Colors.indigo,
+          ).elastic().animate(duration: const Duration(seconds: 1)),
+
           const SizedBox(height: 40),
-          
-          const DemoBox(label: 'Jelly', color: Colors.cyan)
-              .jelly()
-              .animate(duration: const Duration(milliseconds: 800), repeat: true, reverse: true),
+
+          const DemoBox(label: 'Jelly', color: Colors.cyan).jelly().animate(
+            duration: const Duration(milliseconds: 800),
+            repeat: true,
+            reverse: true,
+          ),
         ],
       ),
     );

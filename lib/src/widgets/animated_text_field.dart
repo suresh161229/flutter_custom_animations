@@ -3,15 +3,31 @@ import 'package:custom_animation/custom_animation.dart';
 
 /// An animated text field that gently fades and scales in.
 class AnimatedTextField extends StatelessWidget {
+  /// Documentation for [controller].
   final TextEditingController? controller;
+
+  /// Documentation for [hintText].
   final String? hintText;
+
+  /// Documentation for [prefixIcon].
   final Widget? prefixIcon;
+
+  /// Documentation for [suffixIcon].
   final Widget? suffixIcon;
+
+  /// Documentation for [obscureText].
   final bool obscureText;
+
+  /// Documentation for [onChanged].
   final ValueChanged<String>? onChanged;
+
+  /// The duration of the animation.
   final Duration duration;
+
+  /// The effect to apply.
   final AnimationEffect effect;
 
+  /// Creates a [AnimatedTextField].
   const AnimatedTextField({
     super.key,
     this.controller,
@@ -37,9 +53,7 @@ class AnimatedTextField extends StatelessWidget {
           hintText: hintText,
           prefixIcon: prefixIcon,
           suffixIcon: suffixIcon,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
         ),
       ),
     );

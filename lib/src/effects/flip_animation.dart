@@ -4,15 +4,31 @@ import 'dart:math' as math;
 
 /// An animated widget that applies a 3D flip effect to its child.
 class FlipAnimation extends StatelessWidget {
+  /// The widget below this widget in the tree.
   final Widget child;
+
+  /// The duration of the animation.
   final Duration? duration;
+
+  /// The delay before the animation starts.
   final Duration? delay;
+
+  /// Whether the animation should repeat indefinitely.
   final bool repeat;
+
+  /// Whether the animation should reverse after completing.
   final bool reverse;
+
+  /// Whether the animation should start automatically.
   final bool autoPlay;
+
+  /// Documentation for [onStart].
   final VoidCallback? onStart;
+
+  /// Documentation for [onComplete].
   final VoidCallback? onComplete;
 
+  /// Creates a [FlipAnimation].
   const FlipAnimation({
     super.key,
     required this.child,
@@ -37,6 +53,7 @@ class FlipAnimation extends StatelessWidget {
       onComplete: onComplete,
       child: child,
       builder: (context, child, animation) {
+        /// A property of this class.
         final angle = animation.value * math.pi;
         return Transform(
           alignment: Alignment.center,

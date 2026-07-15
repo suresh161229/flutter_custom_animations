@@ -12,15 +12,16 @@ class FlipDemo extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const DemoBox(label: 'Flip In')
-              .flip()
-              .animate(duration: const Duration(seconds: 1)),
-              
+          const DemoBox(
+            label: 'Flip In',
+          ).flip().animate(duration: const Duration(seconds: 1)),
+
           const SizedBox(height: 40),
-          
-          const DemoBox(label: 'Continuous', color: Colors.deepOrange)
-              .flip()
-              .animate(duration: const Duration(seconds: 2), repeat: true),
+
+          const DemoBox(
+            label: 'Continuous',
+            color: Colors.deepOrange,
+          ).flip().animate(duration: const Duration(seconds: 2), repeat: true),
         ],
       ),
     );

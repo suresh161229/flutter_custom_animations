@@ -11,10 +11,7 @@ class AnimationStatusHandler {
   final AnimationLifecycle lifecycle;
 
   /// Creates an [AnimationStatusHandler].
-  AnimationStatusHandler({
-    required this.controller,
-    required this.lifecycle,
-  }) {
+  AnimationStatusHandler({required this.controller, required this.lifecycle}) {
     _initListeners();
   }
 

@@ -3,11 +3,19 @@ import 'package:custom_animation/custom_animation.dart';
 
 /// A card that elegantly enters the screen when built.
 class AnimatedCard extends StatelessWidget {
+  /// The widget below this widget in the tree.
   final Widget child;
+
+  /// The delay before the animation starts.
   final Duration delay;
+
+  /// The duration of the animation.
   final Duration duration;
+
+  /// Documentation for [entryEffects].
   final List<AnimationEffect> entryEffects;
 
+  /// Creates a [AnimatedCard].
   const AnimatedCard({
     super.key,
     required this.child,

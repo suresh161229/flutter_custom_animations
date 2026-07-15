@@ -12,9 +12,13 @@ abstract class AnimationEffect {
 
 /// A fade effect.
 class FadeEffect extends AnimationEffect {
+  /// The starting value for this animation.
   final double begin;
+
+  /// The final value for this animation.
   final double end;
 
+  /// Creates a [FadeEffect].
   const FadeEffect({this.begin = 0.0, this.end = 1.0});
 
   @override
@@ -32,9 +36,13 @@ class FadeEffect extends AnimationEffect {
 
 /// A scale effect.
 class ScaleEffect extends AnimationEffect {
+  /// The starting value for this animation.
   final double begin;
+
+  /// The final value for this animation.
   final double end;
 
+  /// Creates a [ScaleEffect].
   const ScaleEffect({this.begin = 0.0, this.end = 1.0});
 
   @override
@@ -52,9 +60,13 @@ class ScaleEffect extends AnimationEffect {
 
 /// A slide effect.
 class SlideEffect extends AnimationEffect {
+  /// The starting value for this animation.
   final Offset begin;
+
+  /// The final value for this animation.
   final Offset end;
 
+  /// Creates a [SlideEffect].
   const SlideEffect({
     this.begin = const Offset(-1.0, 0.0),
     this.end = Offset.zero,
@@ -75,9 +87,13 @@ class SlideEffect extends AnimationEffect {
 
 /// A rotation effect.
 class RotationEffect extends AnimationEffect {
+  /// The starting value for this animation.
   final double begin;
+
+  /// The final value for this animation.
   final double end;
 
+  /// Creates a [RotationEffect].
   const RotationEffect({this.begin = 0.0, this.end = 1.0}); // Turns
 
   @override
@@ -95,9 +111,13 @@ class RotationEffect extends AnimationEffect {
 
 /// A blur effect.
 class BlurEffect extends AnimationEffect {
+  /// The starting value for this animation.
   final double begin;
+
+  /// The final value for this animation.
   final double end;
 
+  /// Creates a [BlurEffect].
   const BlurEffect({this.begin = 10.0, this.end = 0.0});
 
   @override
@@ -106,6 +126,7 @@ class BlurEffect extends AnimationEffect {
     Widget child,
     Animation<double> animation,
   ) {
+    /// A property of this class.
     final sigma = begin + (end - begin) * animation.value;
     return ImageFiltered(
       imageFilter: ImageFilter.blur(sigmaX: sigma, sigmaY: sigma),
@@ -116,9 +137,13 @@ class BlurEffect extends AnimationEffect {
 
 /// A zoom effect (scale + fade).
 class ZoomEffect extends AnimationEffect {
+  /// The starting value for this animation.
   final double begin;
+
+  /// The final value for this animation.
   final double end;
 
+  /// Creates a [ZoomEffect].
   const ZoomEffect({this.begin = 0.0, this.end = 1.0});
 
   @override
@@ -127,6 +152,7 @@ class ZoomEffect extends AnimationEffect {
     Widget child,
     Animation<double> animation,
   ) {
+    /// A property of this class.
     final val = begin + (end - begin) * animation.value;
     return Opacity(
       opacity: val.clamp(0.0, 1.0),
@@ -145,7 +171,10 @@ class BounceEffect extends AnimationEffect {
     Widget child,
     Animation<double> animation,
   ) {
+    /// A property of this class.
     final val = animation.value;
+
+    /// A property of this class.
     final dy = -math.sin(val * math.pi) * math.cos(val * math.pi * 2) * 20.0;
     return Transform.translate(offset: Offset(0, dy), child: child);
   }
@@ -161,6 +190,7 @@ class ShakeEffect extends AnimationEffect {
     Widget child,
     Animation<double> animation,
   ) {
+    /// A property of this class.
     final dx = math.sin(animation.value * math.pi * 6) * 10;
     return Transform.translate(offset: Offset(dx, 0), child: child);
   }
@@ -230,6 +260,7 @@ class JellyEffect extends AnimationEffect {
     Widget child,
     Animation<double> animation,
   ) {
+    /// A property of this class.
     final val = animation.value;
     final x =
         1.0 + math.sin(val * math.pi * 3) * math.cos(val * math.pi / 2) * 0.25;
@@ -253,6 +284,7 @@ class PulseEffect extends AnimationEffect {
     Widget child,
     Animation<double> animation,
   ) {
+    /// A property of this class.
     final scale = 1.0 + (math.sin(animation.value * math.pi) * 0.1);
     return Transform.scale(scale: scale, child: child);
   }

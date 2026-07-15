@@ -64,8 +64,8 @@ class FadeAnimation extends StatefulWidget {
     this.autoPlay = true,
     this.onStart,
     this.onComplete,
-  })  : begin = 0.0,
-        end = 1.0;
+  }) : begin = 0.0,
+       end = 1.0;
 
   /// Factory for a standard fade out animation (1.0 to 0.0).
   const FadeAnimation.fadeOut({
@@ -79,8 +79,8 @@ class FadeAnimation extends StatefulWidget {
     this.autoPlay = true,
     this.onStart,
     this.onComplete,
-  })  : begin = 1.0,
-        end = 0.0;
+  }) : begin = 1.0,
+       end = 0.0;
 
   @override
   State<FadeAnimation> createState() => _FadeAnimationState();
@@ -130,9 +130,6 @@ class _FadeAnimationState extends State<FadeAnimation>
 
   @override
   Widget build(BuildContext context) {
-    return FadeTransition(
-      opacity: _opacity,
-      child: widget.child,
-    );
+    return FadeTransition(opacity: _opacity, child: widget.child);
   }
 }

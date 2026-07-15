@@ -6,11 +6,7 @@ class DemoScaffold extends StatefulWidget {
   final String title;
   final Widget child;
 
-  const DemoScaffold({
-    super.key,
-    required this.title,
-    required this.child,
-  });
+  const DemoScaffold({super.key, required this.title, required this.child});
 
   @override
   State<DemoScaffold> createState() => _DemoScaffoldState();
@@ -40,7 +36,8 @@ class _DemoScaffoldState extends State<DemoScaffold> {
         ],
       ),
       body: Center(
-        key: _key, // Changing the key forces the child subtree to rebuild, re-triggering animations
+        key:
+            _key, // Changing the key forces the child subtree to rebuild, re-triggering animations
         child: Padding(
           padding: const EdgeInsets.all(24.0),
           child: widget.child,
@@ -53,7 +50,7 @@ class _DemoScaffoldState extends State<DemoScaffold> {
 class DemoBox extends StatelessWidget {
   final String label;
   final Color? color;
-  
+
   const DemoBox({super.key, required this.label, this.color});
 
   @override
@@ -69,7 +66,7 @@ class DemoBox extends StatelessWidget {
             color: (color ?? AppStyles.primary).withValues(alpha: 0.3),
             blurRadius: 20,
             offset: const Offset(0, 10),
-          )
+          ),
         ],
       ),
       alignment: Alignment.center,

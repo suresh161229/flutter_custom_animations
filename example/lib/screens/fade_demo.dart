@@ -12,19 +12,28 @@ class FadeDemo extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          const Text('Fade In', style: TextStyle(fontSize: 18, color: Colors.white)),
+          const Text(
+            'Fade In',
+            style: TextStyle(fontSize: 18, color: Colors.white),
+          ),
           const SizedBox(height: 16),
           const DemoBox(label: 'Fade')
               .fade(begin: 0.0, end: 1.0)
               .animate(duration: const Duration(seconds: 1)),
-              
+
           const SizedBox(height: 40),
-          
-          const Text('Fade Out (Delayed)', style: TextStyle(fontSize: 18, color: Colors.white)),
+
+          const Text(
+            'Fade Out (Delayed)',
+            style: TextStyle(fontSize: 18, color: Colors.white),
+          ),
           const SizedBox(height: 16),
           const DemoBox(label: 'Gone!', color: Colors.pink)
               .fade(begin: 1.0, end: 0.0)
-              .animate(duration: const Duration(seconds: 1), delay: const Duration(milliseconds: 500)),
+              .animate(
+                duration: const Duration(seconds: 1),
+                delay: const Duration(milliseconds: 500),
+              ),
         ],
       ),
     );

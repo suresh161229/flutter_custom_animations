@@ -3,13 +3,25 @@ import 'package:custom_animation/custom_animation.dart';
 
 /// A container that applies a list of effects to its child.
 class CustomAnimatedContainer extends StatelessWidget {
+  /// The widget below this widget in the tree.
   final Widget child;
+
+  /// The duration of the animation.
   final Duration duration;
+
+  /// The delay before the animation starts.
   final Duration delay;
+
+  /// The list of effects to apply.
   final List<AnimationEffect> effects;
+
+  /// Whether the animation should repeat indefinitely.
   final bool repeat;
+
+  /// Whether the animation should reverse after completing.
   final bool reverse;
 
+  /// Creates a [CustomAnimatedContainer].
   const CustomAnimatedContainer({
     super.key,
     required this.child,

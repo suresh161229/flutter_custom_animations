@@ -3,13 +3,25 @@ import 'package:custom_animation/custom_animation.dart';
 
 /// An animated search bar that expands horizontally.
 class AnimatedSearchBar extends StatefulWidget {
+  /// Documentation for [controller].
   final TextEditingController controller;
+
+  /// Documentation for [onChanged].
   final ValueChanged<String>? onChanged;
+
+  /// Documentation for [onSubmitted].
   final VoidCallback? onSubmitted;
+
+  /// Documentation for [collapsedWidth].
   final double collapsedWidth;
+
+  /// Documentation for [expandedWidth].
   final double expandedWidth;
+
+  /// The duration of the animation.
   final Duration duration;
 
+  /// Creates a [AnimatedSearchBar].
   const AnimatedSearchBar({
     super.key,
     required this.controller,
@@ -24,7 +36,8 @@ class AnimatedSearchBar extends StatefulWidget {
   State<AnimatedSearchBar> createState() => _AnimatedSearchBarState();
 }
 
-class _AnimatedSearchBarState extends State<AnimatedSearchBar> with SingleTickerProviderStateMixin {
+class _AnimatedSearchBarState extends State<AnimatedSearchBar>
+    with SingleTickerProviderStateMixin {
   late AnimationControllerManager _manager;
   bool _isExpanded = false;
 
@@ -33,7 +46,10 @@ class _AnimatedSearchBarState extends State<AnimatedSearchBar> with SingleTicker
     super.initState();
     _manager = AnimationControllerManager(
       vsync: this,
-      config: AnimationConfig(duration: widget.duration, curve: Curves.easeInOut),
+      config: AnimationConfig(
+        duration: widget.duration,
+        curve: Curves.easeInOut,
+      ),
     );
   }
 
@@ -60,14 +76,24 @@ class _AnimatedSearchBarState extends State<AnimatedSearchBar> with SingleTicker
     return AnimatedBuilder(
       animation: _manager.controller,
       builder: (context, child) {
-        final width = widget.collapsedWidth + (widget.expandedWidth - widget.collapsedWidth) * _manager.controller.value;
+        /// A property of this class.
+        final width =
+            widget.collapsedWidth +
+            (widget.expandedWidth - widget.collapsedWidth) *
+                _manager.controller.value;
         return Container(
           width: width,
           height: widget.collapsedWidth,
           decoration: BoxDecoration(
             color: Theme.of(context).cardColor,
             borderRadius: BorderRadius.circular(widget.collapsedWidth / 2),
-            boxShadow: const [BoxShadow(color: Colors.black12, blurRadius: 4, offset: Offset(0, 2))],
+            boxShadow: const [
+              BoxShadow(
+                color: Colors.black12,
+                blurRadius: 4,
+                offset: Offset(0, 2),
+              ),
+            ],
           ),
           child: Row(
             children: [
@@ -83,19 +109,22 @@ class _AnimatedSearchBarState extends State<AnimatedSearchBar> with SingleTicker
               Expanded(
                 child: Opacity(
                   opacity: _manager.controller.value,
-                  child: _isExpanded
-                      ? TextField(
-                          controller: widget.controller,
-                          onChanged: widget.onChanged,
-                          onSubmitted: (_) {
-                            if (widget.onSubmitted != null) widget.onSubmitted!();
-                          },
-                          decoration: const InputDecoration(
-                            border: InputBorder.none,
-                            hintText: 'Search...',
-                          ),
-                        )
-                      : const SizedBox.shrink(),
+                  child:
+                      _isExpanded
+                          ? TextField(
+                            controller: widget.controller,
+                            onChanged: widget.onChanged,
+                            onSubmitted: (_) {
+                              if (widget.onSubmitted != null) {
+                                widget.onSubmitted!();
+                              }
+                            },
+                            decoration: const InputDecoration(
+                              border: InputBorder.none,
+                              hintText: 'Search...',
+                            ),
+                          )
+                          : const SizedBox.shrink(),
                 ),
               ),
             ],

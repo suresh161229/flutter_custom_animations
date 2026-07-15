@@ -3,7 +3,9 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:custom_animation/custom_animation.dart';
 
 void main() {
-  testWidgets('ScaleAnimation.scaleUp starts at 0.0 and ends at 1.0', (WidgetTester tester) async {
+  testWidgets('ScaleAnimation.scaleUp starts at 0.0 and ends at 1.0', (
+    WidgetTester tester,
+  ) async {
     await tester.pumpWidget(
       const MaterialApp(
         home: Scaffold(

@@ -14,13 +14,44 @@ class NavigationDemo extends StatelessWidget {
         runSpacing: 16,
         alignment: WrapAlignment.center,
         children: [
-          _buildNavBtn(context, 'FadeRoute', FadeRoute(page: const _DummyPage('Fade'))),
-          _buildNavBtn(context, 'SlideRoute', SlideRoute(page: const _DummyPage('Slide'))),
-          _buildNavBtn(context, 'ScaleRoute', ScaleRoute(page: const _DummyPage('Scale'))),
-          _buildNavBtn(context, 'ZoomRoute', ZoomRoute(page: const _DummyPage('Zoom'))),
-          _buildNavBtn(context, 'SharedAxis X', SharedAxisRoute(page: const _DummyPage('Shared X'), type: SharedAxis.x)),
-          _buildNavBtn(context, 'MaterialMotion', MaterialMotionRoute(page: const _DummyPage('Material'))),
-          _buildNavBtn(context, 'Cupertino', CupertinoRoute(page: const _DummyPage('Cupertino'))),
+          _buildNavBtn(
+            context,
+            'FadeRoute',
+            FadeRoute(page: const _DummyPage('Fade')),
+          ),
+          _buildNavBtn(
+            context,
+            'SlideRoute',
+            SlideRoute(page: const _DummyPage('Slide')),
+          ),
+          _buildNavBtn(
+            context,
+            'ScaleRoute',
+            ScaleRoute(page: const _DummyPage('Scale')),
+          ),
+          _buildNavBtn(
+            context,
+            'ZoomRoute',
+            ZoomRoute(page: const _DummyPage('Zoom')),
+          ),
+          _buildNavBtn(
+            context,
+            'SharedAxis X',
+            SharedAxisRoute(
+              page: const _DummyPage('Shared X'),
+              type: SharedAxis.x,
+            ),
+          ),
+          _buildNavBtn(
+            context,
+            'MaterialMotion',
+            MaterialMotionRoute(page: const _DummyPage('Material')),
+          ),
+          _buildNavBtn(
+            context,
+            'Cupertino',
+            CupertinoRoute(page: const _DummyPage('Cupertino')),
+          ),
         ],
       ).stagger(staggerRatio: 0.1),
     );
@@ -46,9 +77,7 @@ class _DummyPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(title)),
-      body: Center(
-        child: const DemoBox(label: 'Arrived!').bounce(),
-      ),
+      body: Center(child: const DemoBox(label: 'Arrived!').bounce()),
     );
   }
 }

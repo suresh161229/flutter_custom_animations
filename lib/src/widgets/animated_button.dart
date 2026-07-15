@@ -3,11 +3,19 @@ import 'package:custom_animation/custom_animation.dart';
 
 /// An animated button that scales or bounces dynamically on tap.
 class AnimatedButton extends StatefulWidget {
+  /// The widget below this widget in the tree.
   final Widget child;
+
+  /// Callback when the widget is pressed.
   final VoidCallback? onPressed;
+
+  /// The effect to apply.
   final AnimationEffect effect;
+
+  /// The duration of the animation.
   final Duration duration;
 
+  /// Creates a [AnimatedButton].
   const AnimatedButton({
     super.key,
     required this.child,
@@ -20,7 +28,8 @@ class AnimatedButton extends StatefulWidget {
   State<AnimatedButton> createState() => _AnimatedButtonState();
 }
 
-class _AnimatedButtonState extends State<AnimatedButton> with SingleTickerProviderStateMixin {
+class _AnimatedButtonState extends State<AnimatedButton>
+    with SingleTickerProviderStateMixin {
   late AnimationControllerManager _manager;
 
   @override

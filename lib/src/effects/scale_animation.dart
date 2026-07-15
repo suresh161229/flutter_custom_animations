@@ -64,8 +64,8 @@ class ScaleAnimation extends StatefulWidget {
     this.autoPlay = true,
     this.onStart,
     this.onComplete,
-  })  : begin = 0.0,
-        end = 1.0;
+  }) : begin = 0.0,
+       end = 1.0;
 
   /// Factory for a scale down animation (1.0 to 0.0).
   const ScaleAnimation.scaleDown({
@@ -79,8 +79,8 @@ class ScaleAnimation extends StatefulWidget {
     this.autoPlay = true,
     this.onStart,
     this.onComplete,
-  })  : begin = 1.0,
-        end = 0.0;
+  }) : begin = 1.0,
+       end = 0.0;
 
   @override
   State<ScaleAnimation> createState() => _ScaleAnimationState();
@@ -130,9 +130,6 @@ class _ScaleAnimationState extends State<ScaleAnimation>
 
   @override
   Widget build(BuildContext context) {
-    return ScaleTransition(
-      scale: _scale,
-      child: widget.child,
-    );
+    return ScaleTransition(scale: _scale, child: widget.child);
   }
 }

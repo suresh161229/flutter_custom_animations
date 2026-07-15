@@ -1,30 +1,31 @@
 # custom_animation
 
 [![Pub Version](https://img.shields.io/pub/v/custom_animation?color=blue)](https://pub.dev/packages/custom_animation)
-[![Flutter Tests](https://img.shields.io/badge/tests-59%20passed-success)]()
-[![Coverage](https://img.shields.io/badge/coverage-100%25-success)]()
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Flutter Build](https://github.com/SureshBabu/custom_animation/actions/workflows/flutter.yml/badge.svg)](https://github.com/SureshBabu/custom_animation/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-A highly robust, zero-nesting, zero-boilerplate animation framework for Flutter. 
+A reusable, production-ready Flutter animation framework providing customizable animation effects, animated widgets, page transitions, complex builders, and extremely convenient widget extensions.
 
-`custom_animation` eliminates the need for managing `AnimationController`s, `TickerProviderStateMixin`s, and deep widget trees. By utilizing a **Fluent Widget Extension API**, you can compose complex, chained animations directly on any widget inline.
+## Introduction
 
----
+`custom_animation` removes the boilerplate from Flutter animations. Instead of manually managing `AnimationController`s, `Tween`s, and `SingleTickerProviderStateMixin`s, you can add high-quality, performant animations to your apps using dead-simple widget extensions and pre-built animated widgets.
 
-## 🌟 Features
+## Features
 
-- **Zero Nesting**: Animate using `.fade().slide().scale()` directly on any widget.
-- **13 Built-in Effects**: Fade, Slide, Scale, Rotate, Bounce, Shake, Pulse, Flip, Blur, Zoom, Elastic, Swing, and Jelly.
-- **Staggering & Builders**: Animate lists and grids seamlessly with `CustomAnimatedList`.
-- **Pre-built Widgets**: Drop-in replacements like `AnimatedButton`, `AnimatedCard`, and `AnimatedSearchBar`.
-- **Navigator 2.0 Transitions**: Native support for 8 transition effects (FadeRoute, HeroRoute, SharedAxis, etc.).
-- **Production Ready**: 100% Test Coverage including Golden Tests and precise Matrix4 rendering tests.
+* **Animation Core:** Built on a highly optimized internal core handling controllers and lifecycles automatically.
+* **Animation Effects:** Fade, Slide, Scale, Rotation, Bounce, Shake, Pulse, Flip, Blur, Zoom.
+* **Animated Widgets:** Pre-built `AnimatedButton`, `AnimatedCard`, `AnimatedDialog`, `AnimatedContainer`, `AnimatedList`, `CustomAnimatedGrid`, and more.
+* **Navigation Transitions:** Beautiful page transitions like `FadeRoute`, `SlideRoute`, `HeroRoute`, `SharedAxisRoute`, and more.
+* **Animation Builders:** `SequenceBuilder`, `StaggerBuilder`, `ChainBuilder`, and `ParallelBuilder` to create incredibly complex chained animations with ease.
+* **Widget Extensions:** Simply add `.animate()`, `.fadeIn()`, or `.slideIn()` to ANY Flutter widget to instantly animate it!
 
----
+## Why custom_animation?
 
-## 🚀 Installation
+Traditional Flutter animations require significant boilerplate, making UI code verbose and harder to read. `custom_animation` drastically simplifies this by allowing declarative animations directly in the widget tree, reducing boilerplate by up to 80% while retaining full control over durations, curves, and sequences.
 
-Add `custom_animation` to your `pubspec.yaml`:
+## Installation
+
+Add the following to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
@@ -32,109 +33,105 @@ dependencies:
 ```
 
 Then run:
+
 ```bash
 flutter pub get
 ```
 
----
+## Basic Usage
 
-## 📖 Quick Start
-
-### 1. Fluent API (Zero Nesting)
-Forget wrapping widgets in `FadeTransition`. Just use the extension!
+The easiest way to animate any widget is using our **Widget Extensions**:
 
 ```dart
 import 'package:custom_animation/custom_animation.dart';
 
-// Before: Boilerplate hell
-// After:
-Text("Hello World")
-  .fade(begin: 0.0, end: 1.0)
-  .slide(begin: Offset(0, 0.5))
-  .scale()
-  .animate(
-    duration: const Duration(seconds: 1),
-    delay: const Duration(milliseconds: 200),
-    curve: Curves.easeOut,
-  );
+// Just append `.fadeIn()` to any widget!
+Text('Hello World').fadeIn(
+  duration: const Duration(seconds: 1),
+  curve: Curves.easeOut,
+);
 ```
 
-### 2. Staggered Lists
-Animating a list of items sequentially has never been easier.
+You can even chain them:
+
+```dart
+Container(width: 100, height: 100, color: Colors.blue)
+  .fadeIn(delay: const Duration(milliseconds: 200))
+  .scaleIn(duration: const Duration(milliseconds: 500));
+```
+
+## Animated Widgets
+
+Need a button that scales down on press? Just use `AnimatedButton`:
+
+```dart
+AnimatedButton(
+  onPressed: () => print('Tapped!'),
+  child: const Text('Tap Me'),
+);
+```
+
+## Animation Builders
+
+For complex, staggered lists, use the `CustomAnimatedList`:
 
 ```dart
 CustomAnimatedList(
   itemCount: 20,
-  staggerDuration: const Duration(milliseconds: 100),
-  effects: const [FadeEffect(), SlideEffect(begin: Offset(1.0, 0.0))],
   itemBuilder: (context, index) {
-    return ListTile(title: Text('Item $index'));
+    return ListTile(title: Text('Item \$index'));
   },
-)
+  duration: const Duration(milliseconds: 300),
+  staggerDuration: const Duration(milliseconds: 50),
+  effects: const [FadeEffect(), SlideEffect(begin: Offset(0, 50))],
+);
 ```
 
-### 3. Page Transitions
-Effortless beautiful navigation routes.
+## Navigation Transitions
+
+Make your page routing beautiful:
 
 ```dart
 Navigator.push(
-  context, 
+  context,
   SharedAxisRoute(
-    page: const DetailPage(),
-    type: SharedAxis.x,
+    page: const DetailsScreen(),
+    transitionType: SharedAxisTransitionType.horizontal,
   ),
 );
 ```
 
----
+## Architecture Overview
 
-## 🏗 Architecture & Core Concepts
+The framework is divided into:
+1. `core`: Internal handlers for AnimationControllers.
+2. `effects`: Definitions for different animation types (Fade, Slide, Scale).
+3. `widgets`: Smart widgets that automatically consume effects.
+4. `transitions`: Page route transitions.
+5. `builders`: Orchestrators for staggering and sequencing.
+6. `extensions`: Syntactic sugar for rapid development.
 
-The package is built on a clean architectural foundation:
+## Best Practices
 
-1. **`AnimationEffect`**: The base contract. Effects (like `FadeEffect` or `JellyEffect`) only describe *what* the animation does (Matrix transformations, Opacity changes).
-2. **`CustomAnimatedWidgetChain`**: The proxy accumulator. When you call `.fade().slide()`, it does NOT wrap your widget immediately. It accumulates the effects into a chain.
-3. **`ParallelBuilder` / `SequenceBuilder`**: The engine. Once `.animate()` is called, the chain collapses into a single stateful builder that manages the `AnimationController` and applies all effects simultaneously (or sequentially), flattening the render tree!
+* Use const constructors wherever possible.
+* Prefer Widget Extensions (`.fadeIn()`) for simple animations to keep the widget tree clean.
+* Use `CustomAnimatedList` instead of manually staggering children in a `ListView`.
+* Keep animation durations under 500ms for a snappy user experience.
 
----
+## Example Application
 
-## 📁 Folder Structure
+Check out the `example/` folder in the repository for a comprehensive showcase of every single feature, effect, and widget available in the framework.
 
-```text
-lib/
-├── src/
-│   ├── core/         # Core framework (AnimationController logic)
-│   ├── effects/      # 13+ Animation Effects (Fade, Slide, Jelly...)
-│   ├── builders/     # Orchestration (Parallel, Sequence, Stagger)
-│   ├── widgets/      # Pre-built UI components (AnimatedButton...)
-│   ├── transitions/  # Navigation routes (Navigator 1.0 & 2.0)
-│   └── extensions/   # Fluent API (.fade().slide())
-└── custom_animation.dart # Public Barrel File
-```
+## Roadmap
 
----
+* Add 3D card flipping widgets.
+* Support for implicit layout animations.
+* Integration with Rive animations.
 
-## 📚 Documentation
+## Contributing
 
-For deep dives into specific topics, check out our guides:
-- [Migration Guide](MIGRATION_GUIDE.md) - Migrating from standard Flutter animations.
-- [Best Practices & FAQ](FAQ.md) - Performance tips and troubleshooting.
-- [Contributing](CONTRIBUTING.md) - How to build, test, and submit PRs.
+Contributions are welcome! Please open an issue or submit a pull request on our GitHub repository. Make sure to run `flutter analyze` and `flutter test` before submitting.
 
----
+## License
 
-## 📸 Showcase
-
-> *Note: Replace these placeholders with actual screen recordings (GIFs/WebMs) of the example app before publishing.*
-
-| Fade & Slide | Bounce & Elastic | Animated Widgets | Page Transitions |
-| :---: | :---: | :---: | :---: |
-| `![Fade](https://via.placeholder.com/200x300.png?text=Fade+GIF)` | `![Bounce](https://via.placeholder.com/200x300.png?text=Bounce+GIF)` | `![Widgets](https://via.placeholder.com/200x300.png?text=Widgets+GIF)` | `![Transitions](https://via.placeholder.com/200x300.png?text=Transitions+GIF)` |
-
-Run the showcase application located in the `example/` folder to see all 11 demo screens in action!
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the LICENSE file for details.

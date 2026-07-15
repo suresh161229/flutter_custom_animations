@@ -25,17 +25,31 @@ class HomeScreen extends StatelessWidget {
       _DemoItem('Rotation', '2D & 3D spinning', (c) => const RotationDemo()),
       _DemoItem('Bounce', 'Spring physics', (c) => const BounceDemo()),
       _DemoItem('Flip', 'Card flipping effects', (c) => const FlipDemo()),
-      _DemoItem('Animated Widgets', 'Pre-built smart components', (c) => const WidgetsDemo()),
-      _DemoItem('Navigation', 'Page transition routes', (c) => const NavigationDemo()),
-      _DemoItem('Stagger', 'Delayed sequenced lists', (c) => const StaggerDemo()),
+      _DemoItem(
+        'Animated Widgets',
+        'Pre-built smart components',
+        (c) => const WidgetsDemo(),
+      ),
+      _DemoItem(
+        'Navigation',
+        'Page transition routes',
+        (c) => const NavigationDemo(),
+      ),
+      _DemoItem(
+        'Stagger',
+        'Delayed sequenced lists',
+        (c) => const StaggerDemo(),
+      ),
       _DemoItem('Hero', 'Cross-screen animations', (c) => const HeroDemo()),
-      _DemoItem('Micro Interactions', 'Fluent API and gestures', (c) => const MicroInteractionsDemo()),
+      _DemoItem(
+        'Micro Interactions',
+        'Fluent API and gestures',
+        (c) => const MicroInteractionsDemo(),
+      ),
     ];
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Custom Animation'),
-      ),
+      appBar: AppBar(title: const Text('Custom Animation')),
       body: CustomAnimatedList(
         effects: const [FadeEffect(), SlideEffect(begin: Offset(0, 0.2))],
         staggerDuration: const Duration(milliseconds: 100),
@@ -84,7 +98,10 @@ class _DemoCard extends StatelessWidget {
                 color: AppStyles.primary.withValues(alpha: 0.2),
                 shape: BoxShape.circle,
               ),
-              child: const Icon(Icons.play_arrow_rounded, color: AppStyles.primary),
+              child: const Icon(
+                Icons.play_arrow_rounded,
+                color: AppStyles.primary,
+              ),
             ),
             const SizedBox(width: 20),
             Expanded(
