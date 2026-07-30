@@ -30,6 +30,9 @@ migrate_working_dir/
 .flutter-plugins-dependencies
 build/
 
+# Test coverage output — never commit generated coverage reports
+coverage/
+
 # Visual asset capture — raw screen recordings (large binary files)
 *.mov
 *.mp4

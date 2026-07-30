@@ -1,0 +1,24 @@
+# Files and directories excluded from the pub.dev published package.
+# Syntax is identical to .gitignore.
+# See: https://dart.dev/tools/pub/publishing#what-files-are-published
+
+# CI / repository infrastructure
+.github/
+scripts/
+
+# Test coverage reports (generated artefact, not source)
+coverage/
+
+# Visual asset source directories (GIFs and screenshots are hosted on GitHub,
+# not needed by package consumers)
+gifs/
+screenshots/
+doc/
+
+# Test golden images (binary PNGs, large, not needed by consumers)
+test/goldens/
+
+# Miscellaneous dev files
+*.mov
+*.mp4
+*.mkv
