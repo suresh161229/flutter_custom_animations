@@ -1,4 +1,4 @@
-name: Flutter CI
+name: Flutter CI & Package Validation
 
 on:
   push:
@@ -7,29 +7,37 @@ on:
     branches: [ main, master ]
 
 jobs:
-  build:
+  validate:
+    name: Build, Analyze & Test
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Set up Flutter
-      uses: subosito/flutter-action@v2
-      with:
-        flutter-version: '3.29.0'
-        channel: 'stable'
+      - name: Set up Java JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: '17'
 
-    - name: Install dependencies
-      run: flutter pub get
+      - name: Set up Flutter SDK
+        uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+          cache: true
 
-    - name: Check formatting
-      run: dart format --output=none --set-exit-if-changed .
+      - name: Install dependencies
+        run: flutter pub get
 
-    - name: Analyze project source
-      run: flutter analyze
+      - name: Check Code Formatting
+        run: dart format --output=none --set-exit-if-changed .
 
-    - name: Run tests
-      run: flutter test
+      - name: Analyze Code
+        run: flutter analyze
 
-    - name: Generate API Documentation
-      run: dart doc
+      - name: Run Unit & Widget Tests
+        run: flutter test --coverage
+
+      - name: Validate Package Dry Run
+        run: flutter pub publish --dry-run

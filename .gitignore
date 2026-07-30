@@ -29,3 +29,10 @@ migrate_working_dir/
 .flutter-plugins
 .flutter-plugins-dependencies
 build/
+
+# Visual asset capture — raw screen recordings (large binary files)
+*.mov
+*.mp4
+*.mkv
+rec_*.mov
+rec_*.mp4
