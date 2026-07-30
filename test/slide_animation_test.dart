@@ -17,7 +17,10 @@ void main() {
         ),
       );
 
-      final slideFinder = find.byType(SlideTransition);
+      final slideFinder = find.descendant(
+        of: find.byType(SlideAnimation),
+        matching: find.byType(SlideTransition),
+      );
       expect(slideFinder, findsOneWidget);
 
       SlideTransition slideTransition = tester.widget(slideFinder);

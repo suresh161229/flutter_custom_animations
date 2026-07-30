@@ -17,7 +17,10 @@ void main() {
       ),
     );
 
-    final fadeFinder = find.byType(FadeTransition);
+    final fadeFinder = find.descendant(
+      of: find.byType(FadeAnimation),
+      matching: find.byType(FadeTransition),
+    );
     expect(fadeFinder, findsOneWidget);
 
     FadeTransition fadeTransition = tester.widget(fadeFinder);
