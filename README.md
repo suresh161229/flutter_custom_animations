@@ -10,7 +10,7 @@ A reusable, production-ready Flutter animation framework providing customizable 
 
 | Effects | Widgets | Transitions | Builders |
 |:-------:|:-------:|:-----------:|:--------:|
-| [![Effects Demo](doc/assets/gifs/effects_demo.gif)](doc/assets/gifs/effects_demo.gif) | [![Widgets Demo](doc/assets/gifs/widgets_demo.gif)](doc/assets/gifs/widgets_demo.gif) | [![Transitions Demo](doc/assets/gifs/transitions_demo.gif)](doc/assets/gifs/transitions_demo.gif) | [![Builders Demo](doc/assets/gifs/builders_demo.gif)](doc/assets/gifs/builders_demo.gif) |
+| [![Effects Demo](https://raw.githubusercontent.com/suresh161229/flutter_custom_animations/master/doc/assets/gifs/effects_demo.gif)](https://raw.githubusercontent.com/suresh161229/flutter_custom_animations/master/doc/assets/gifs/effects_demo.gif) | [![Widgets Demo](https://raw.githubusercontent.com/suresh161229/flutter_custom_animations/master/doc/assets/gifs/widgets_demo.gif)](https://raw.githubusercontent.com/suresh161229/flutter_custom_animations/master/doc/assets/gifs/widgets_demo.gif) | [![Transitions Demo](https://raw.githubusercontent.com/suresh161229/flutter_custom_animations/master/doc/assets/gifs/transitions_demo.gif)](https://raw.githubusercontent.com/suresh161229/flutter_custom_animations/master/doc/assets/gifs/transitions_demo.gif) | [![Builders Demo](https://raw.githubusercontent.com/suresh161229/flutter_custom_animations/master/doc/assets/gifs/builders_demo.gif)](https://raw.githubusercontent.com/suresh161229/flutter_custom_animations/master/doc/assets/gifs/builders_demo.gif) |
 | Fade · Slide · Scale · Rotation · Bounce · Shake · Pulse · Flip | AnimatedButton · AnimatedCard · AnimatedList · AnimatedDialog | FadeRoute · SlideRoute · SharedAxisRoute · HeroRoute | StaggerBuilder · SequenceBuilder · ChainBuilder · ParallelBuilder |
 
 ## Preview
@@ -19,29 +19,29 @@ A reusable, production-ready Flutter animation framework providing customizable 
 
 | Fade | Slide | Scale | Rotation |
 |------|-------|-------|----------|
-| ![Fade](gifs/effects/fade.gif) | ![Slide](gifs/effects/slide.gif) | ![Scale](gifs/effects/scale.gif) | ![Rotation](gifs/effects/rotation.gif) |
+| ![Fade](https://raw.githubusercontent.com/suresh161229/flutter_custom_animations/master/gifs/effects/fade.gif) | ![Slide](https://raw.githubusercontent.com/suresh161229/flutter_custom_animations/master/gifs/effects/slide.gif) | ![Scale](https://raw.githubusercontent.com/suresh161229/flutter_custom_animations/master/gifs/effects/scale.gif) | ![Rotation](https://raw.githubusercontent.com/suresh161229/flutter_custom_animations/master/gifs/effects/rotation.gif) |
 
 | Bounce | Shake | Pulse | Flip |
 |--------|-------|-------|------|
-| ![Bounce](gifs/effects/bounce.gif) | ![Shake](gifs/effects/shake.gif) | ![Pulse](gifs/effects/pulse.gif) | ![Flip](gifs/effects/flip.gif) |
+| ![Bounce](https://raw.githubusercontent.com/suresh161229/flutter_custom_animations/master/gifs/effects/bounce.gif) | ![Shake](https://raw.githubusercontent.com/suresh161229/flutter_custom_animations/master/gifs/effects/shake.gif) | ![Pulse](https://raw.githubusercontent.com/suresh161229/flutter_custom_animations/master/gifs/effects/pulse.gif) | ![Flip](https://raw.githubusercontent.com/suresh161229/flutter_custom_animations/master/gifs/effects/flip.gif) |
 
 ### Animated Widgets
 
 | AnimatedButton | AnimatedCard | AnimatedList | AnimatedDialog |
 |----------------|--------------|--------------|----------------|
-| ![AnimatedButton](gifs/widgets/animated_button.gif) | ![AnimatedCard](gifs/widgets/animated_card.gif) | ![AnimatedList](gifs/widgets/animated_list.gif) | ![AnimatedDialog](gifs/widgets/animated_dialog.gif) |
+| ![AnimatedButton](https://raw.githubusercontent.com/suresh161229/flutter_custom_animations/master/gifs/widgets/animated_button.gif) | ![AnimatedCard](https://raw.githubusercontent.com/suresh161229/flutter_custom_animations/master/gifs/widgets/animated_card.gif) | ![AnimatedList](https://raw.githubusercontent.com/suresh161229/flutter_custom_animations/master/gifs/widgets/animated_list.gif) | ![AnimatedDialog](https://raw.githubusercontent.com/suresh161229/flutter_custom_animations/master/gifs/widgets/animated_dialog.gif) |
 
 ### Page Transitions
 
 | FadeRoute | SlideRoute | SharedAxisRoute | HeroRoute |
 |-----------|------------|-----------------|----------|
-| ![FadeRoute](gifs/transitions/fade_route.gif) | ![SlideRoute](gifs/transitions/slide_route.gif) | ![SharedAxisRoute](gifs/transitions/shared_axis.gif) | ![HeroRoute](gifs/transitions/hero_route.gif) |
+| ![FadeRoute](https://raw.githubusercontent.com/suresh161229/flutter_custom_animations/master/gifs/transitions/fade_route.gif) | ![SlideRoute](https://raw.githubusercontent.com/suresh161229/flutter_custom_animations/master/gifs/transitions/slide_route.gif) | ![SharedAxisRoute](https://raw.githubusercontent.com/suresh161229/flutter_custom_animations/master/gifs/transitions/shared_axis.gif) | ![HeroRoute](https://raw.githubusercontent.com/suresh161229/flutter_custom_animations/master/gifs/transitions/hero_route.gif) |
 
 ### Animation Builders
 
 | StaggerBuilder | SequenceBuilder | ChainBuilder | ParallelBuilder |
 |----------------|-----------------|--------------|------------------|
-| ![StaggerBuilder](gifs/builders/stagger_builder.gif) | ![SequenceBuilder](gifs/builders/sequence_builder.gif) | ![ChainBuilder](gifs/builders/chain_builder.gif) | ![ParallelBuilder](gifs/builders/parallel_builder.gif) |
+| ![StaggerBuilder](https://raw.githubusercontent.com/suresh161229/flutter_custom_animations/master/gifs/builders/stagger_builder.gif) | ![SequenceBuilder](https://raw.githubusercontent.com/suresh161229/flutter_custom_animations/master/gifs/builders/sequence_builder.gif) | ![ChainBuilder](https://raw.githubusercontent.com/suresh161229/flutter_custom_animations/master/gifs/builders/chain_builder.gif) | ![ParallelBuilder](https://raw.githubusercontent.com/suresh161229/flutter_custom_animations/master/gifs/builders/parallel_builder.gif) |
 
 ## Overview
 
@@ -226,13 +226,13 @@ Run it locally to see the animations in action!
 
 ### Static Component Breakdowns
 
-![Effects Overview](screenshots/effects/effects_overview.png)
+![Effects Overview](https://raw.githubusercontent.com/suresh161229/flutter_custom_animations/master/screenshots/effects/effects_overview.png)
 
-![Widgets Overview](screenshots/widgets/widgets_overview.png)
+![Widgets Overview](https://raw.githubusercontent.com/suresh161229/flutter_custom_animations/master/screenshots/widgets/widgets_overview.png)
 
-![Transitions Overview](screenshots/transitions/transitions_overview.png)
+![Transitions Overview](https://raw.githubusercontent.com/suresh161229/flutter_custom_animations/master/screenshots/transitions/transitions_overview.png)
 
-![Builders Overview](screenshots/builders/builders_overview.png)
+![Builders Overview](https://raw.githubusercontent.com/suresh161229/flutter_custom_animations/master/screenshots/builders/builders_overview.png)
 
 ## Folder Structure
 
